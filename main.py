@@ -4,7 +4,9 @@ import requests, re, os, time, logging
 
 load_dotenv()
 # logging.basicConfig(level=logging.INFO)
-logging.basicConfig(filename='nyutaisitu.log', level=logging.INFO)
+
+fmt = "%(asctime)s %(levelname)s %(name)s :%(message)s"
+logging.basicConfig(filename='nyutaisitu.log', level=logging.INFO, format=fmt)
 
 session = requests.Session()
 clf = nfc.ContactlessFrontend("usb")
