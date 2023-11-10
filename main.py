@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import requests, re, os, time, logging
 
 load_dotenv()
-# logging.basicConfig(filename='main.log', encoding='utf-8', level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 session = requests.Session()
 clf = nfc.ContactlessFrontend("usb")
