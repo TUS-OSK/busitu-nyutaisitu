@@ -10,7 +10,7 @@ TODO:Cloudformation fileを乗せる
 ### カードリーダー関係
 基本的に以下のコマンドで動くはず
 ```
-./init.sh
+./make-env.sh
 ```
 終了後再起動してください（必要ないかも）
 ### python関係 
