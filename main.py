@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 import requests, re, os, time, logging
 
 load_dotenv()
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO)
+logging.basicConfig(filename='nyutaisitu.log', level=logging.INFO)
 
 session = requests.Session()
 clf = nfc.ContactlessFrontend("usb")
@@ -15,7 +16,7 @@ while True:
         tagd = tag.dump()
     except:
         logging.warning("scan error")
-        continue
+        break
     try:
         gakusekiStr = re.findall('\|.*\|', tagd[6])[0]
         gakusekiStr = re.findall('[a-zA-Z0-9]*', gakusekiStr)[1][0:7]
