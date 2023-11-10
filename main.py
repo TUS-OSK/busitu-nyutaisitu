@@ -3,13 +3,13 @@ from dotenv import load_dotenv
 import requests, re, os, time, logging
 
 load_dotenv()
-logging.basicConfig(filename='main.log', encoding='utf-8', level=logging.INFO)
+# logging.basicConfig(filename='main.log', encoding='utf-8', level=logging.INFO)
 
 session = requests.Session()
 clf = nfc.ContactlessFrontend("usb")
 while True:
     time.sleep(2)
-    print("カードをかざしてください")
+    logging.info("カードをかざしてください")
     try:
         tag = clf.connect(rdwr={'on-connect': lambda tag: False})
         tagd = tag.dump()
@@ -24,7 +24,7 @@ while True:
         logging.error("parse error")
         continue
     logging.info(gakusekiStr)
-    print("カードを検知")
+    logging.info("カードを検知")
     # print(gakusekiStr)
     try:
         baseUrl = os.environ['API_URL']
@@ -38,4 +38,4 @@ while True:
         logging.error("api error")
         continue
     logging.info(data_response.text)
-    print("正しく送信されました")
+    logging.info("正しく送信されました")

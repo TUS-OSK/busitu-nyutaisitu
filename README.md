@@ -8,7 +8,7 @@ TODO:Cloudformation fileを乗せる
 `python 3.10`で動作確認済み
 ## 初期セットアップ
 ### カードリーダー関係
-基本的に以下のコマンドで動くはず
+usbを認識するための設定を行います
 ```
 ./make-env.sh
 ```
@@ -19,10 +19,11 @@ python3 -m venv venv
 source ./venv/bin/activate
 pip3 install -r requirements.txt
 ```
-## 実行
+### 自動起動(*ローカル実行確認後に行う)
+```
+./register-service.sh
+```
+## ローカル実行
 ```
 python3 main.py
 ```
-## ログファイル
-
-main.log
