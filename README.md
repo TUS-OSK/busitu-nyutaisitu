@@ -1,6 +1,6 @@
 # 概要
 SONY RC-S380を利用して東京理科大学学生証から学籍番号を抜き出して部室の入退室をdiscordに通知するツールです  
-学籍番号とdiscord idの照合や入退室状況の保存のとえバックエンドとしてAWSを利用しています  
+学籍番号とdiscord idの照合や入退室状況の保存のためバックエンドとしてAWSを利用しています  
 
 TODO:Cloudformation fileを乗せる
 
@@ -26,4 +26,8 @@ pip3 install -r requirements.txt
 ## ローカル実行
 ```
 python3 main.py
+```
+## ログの見方
+```
+tail -f /nyutaisitu.log
 ```
