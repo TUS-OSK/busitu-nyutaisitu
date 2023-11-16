@@ -1,3 +1,5 @@
 nfcpy
 python-dotenv
 requests
+pydub
+
